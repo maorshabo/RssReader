@@ -1,0 +1,6 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h3>{{ ::article.title }} - {{ ::article.publishedDate | date:'dd/MM/yyyy' }}</h3>
+    <div ng-bind-html="article.content"></div>
+  </div>
+</div>

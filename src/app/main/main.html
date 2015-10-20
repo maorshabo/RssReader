@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <search-bar></search-bar>
+      <history-url></history-url>
+    </div>
+    <div class="col-lg-8">
+      <h1>{{ main.currentUrl.feedUrl}}</h1>
+      <article-item article="article" ng-repeat="article in main.currentUrl.entries"></article-item>
+    </div>
+  </div>
+</div>

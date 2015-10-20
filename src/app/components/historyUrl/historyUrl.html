@@ -1,0 +1,10 @@
+<ul class="list-group">
+  <li class="list-group-item clearfix" ng-click="vm.selectUrl(url)" ng-class="{'active' : url.active}" ng-repeat="url in vm.urls track by $index">
+    {{ url.feedUrl }}
+    <span class="pull-right">
+      <button class="btn btn-xs btn-warning" ng-click="vm.removeUrl(url,$event)">
+        <span class="glyphicon glyphicon-trash"></span>
+      </button>
+    </span>
+  </li>
+</ul>
