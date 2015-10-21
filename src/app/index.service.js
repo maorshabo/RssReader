@@ -6,9 +6,10 @@
     .service('sharedData', sharedData);
 
   /** @ngInject */
-  function sharedData(localStorageService) {
+  function sharedData(localStorageService,$routeParams) {
     var currentUrl;
     var urlsHistory = localStorageService.get('historyList') || [];
+    var urlIndex;
 
     var service = {
       getCurrentUrl: getCurrentUrl,
@@ -21,6 +22,12 @@
     return service;
 
     function getCurrentUrl() {
+      urlIndex = parseInt($routeParams.id);
+      if (urlIndex) {
+          setCurrentUrl(urlsHistory.find(function(url) {
+            return url.id == urlIndex;
+          }));
+      }
       return currentUrl;
     }
 

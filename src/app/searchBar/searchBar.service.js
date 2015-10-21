@@ -28,6 +28,7 @@
 
     function getFeedFromUrlComplete(response) {
       var feed = response.data.responseData.feed;
+      feed.id = sharedData.getUrlsHistory().length + 1;
       sharedData.setCurrentUrl(feed);
       // update the history list
       historyList = sharedData.getUrlsHistory();

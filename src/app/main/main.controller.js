@@ -6,16 +6,9 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController(sharedData,$scope) {
+  function MainController(sharedData) {
     var vm = this;
     vm.currentUrl = sharedData.getCurrentUrl();
-
-    // this keep me updated with any change to currentUrl at sharedData service
-    $scope.$watch(function() { return sharedData.getCurrentUrl() },function(newCurrentUrl) {
-      if (newCurrentUrl !== void(0)) {
-        vm.currentUrl = newCurrentUrl
-      }
-    });
     return vm;
   }
 })();

@@ -21,7 +21,6 @@
       $scope.$watch(function() { return sharedData.getUrlsHistory() },function(newUrlsHistory) {
         if (newUrlsHistory !== void(0)) {
           vm.urls = newUrlsHistory;
-          vm.selectUrl(newUrlsHistory[0]);
         }
       });
 
@@ -42,6 +41,7 @@
       };
 
       vm.selectUrl = function(url) {
+        $location.path(url.id);
         sharedData.setCurrentUrl(url);
       }
     }
